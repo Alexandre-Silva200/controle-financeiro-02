@@ -1,8 +1,8 @@
 const tbody = document.querySelector("tbody");
 const descItem = document.querySelector("#desc");
 const amount = document.querySelector("#amount");
-const typy = document.querySelector("#type");
-const btnNew = document.querySelector("btnNew");
+const type = document.querySelector("#type");
+const btnNew = document.querySelector("#btnNew");
 
 const incomes = document.querySelector(".incomes");
 const  expenses = document.querySelector(".expenses");
@@ -11,15 +11,22 @@ const total = document.querySelector(".total");
 let items;
 
 btnNew.onclick = () => {
-    if(descItem.value === "" || amount.value === "" || type === ""){
+    if(descItem.value === "" || amount.value === "" || type.value === ""){
         return alert("preencha todos os campos!")
     }
 
     items.push({
         desc: descItem.value,
-        amount: math.abs(amount.value).toFixed(2),
-        type; type.value,
+        amount: Math.abs(amount.value).toFixed(2),
+        type: type.value,
     });
+
+    setItensBD();
+ 
+    loadItens();
+
+    descItem.value = "";
+    amount.value = "";
 };
 
 function deleteItem(index) {
@@ -32,14 +39,15 @@ function insertItem(item, index) {
     let tr = document.createElement("tr");
 
     tr.innerHTML = `
-    <td>${item.amount}</td>
-    <td class="columnType>${
+    <td>${item.desc}</td>
+    <td>R$ ${item.amount}</td>
+    <td class="columnType">${
         item.type === "Entrada"
         ? '<i class="bi bi-arrow-up-short"></i>'
         : '<i class="bi bi-arrow-down-short"></i>'
     }</td>
-    <td class="columnAction>
-        <but onclick="deleteItem(${index})"><i class="bi bi-trash3"></i>"</button>
+    <td class="columnAction">
+        <button onclick="deleteItem(${index})"><i class='bi bi-trash3'></i></button>
     </td>
     `;
 
@@ -54,6 +62,7 @@ function loadItens() {
  });
 
  getTotals();
+}
 
  function getTotals() {
     const amountIncomes = items 
@@ -68,7 +77,7 @@ function loadItens() {
         .reduce((acc, cur) => acc + cur, 0)
         .toFixed(2);
 
-        const totalExpenses = math.abs(
+        const totalExpenses = Math.abs(
             amountExpenses.reduce((acc, cur) => acc + cur, 0)
         ).toFixed(2);
 
@@ -78,7 +87,6 @@ function loadItens() {
         expenses.innerHTML = totalExpenses;
         total.innerHTML = totalItems;
  }
-}
 
 const getItensBD = () => JSON.parse(localStorage.getItem("db_items"))  ?? [];
 const setItensBD = () =>
