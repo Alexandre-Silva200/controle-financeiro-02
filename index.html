@@ -6,6 +6,8 @@
     <title>Controle Financeiro</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
     <main>
@@ -22,25 +24,39 @@
                 Total: R$
                 <span class="incomes">0.00</span>
             </div>
-
-            <div class="newItem">
-                <div class="divDesc">
-                    <label for="desc">Descrição</label>
-                    <input type="text" id="desc">
-                </div>
-                <div class="divAmount">
-                    <label for="amount">Valor</label>
-                    <input type="number" id="amount">
-                </div>
-                <div class="divType">
-                    <label for="type"> tipo</label>
-                    <select id="type">
-                        <option >Entrada</option>
-                        <option >Saida</option>
-                    </select>
-                </div>
-                <button id="btnNew">Incluir</button>
+        </div>
+        <div class="newItem">
+            <div class="divDesc">
+                <label for="desc">Descrição</label>
+                <input type="text" id="desc">
             </div>
+            <div class="divAmount">
+                <label for="amount">Valor</label>
+                <input type="number" id="amount">
+            </div>
+            <div class="divType">
+                <label for="type"> tipo</label>
+                <select id="type">
+                    <option >Entrada</option>
+                    <option >Saida</option>
+                </select>
+            </div>
+            <button id="btnNew">Incluir</button>
+        </div>
+
+        <div class="divTable">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Descrição</th>
+                        <th class="columnAmou">Valor</th>
+                        <th class="columnType">Tipo</th>
+                        <th class="columnAction"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
         </div>
     </main>
 </body>
