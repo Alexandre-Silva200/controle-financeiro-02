@@ -1,0 +1,43 @@
+@media (max-width: 768px) {
+    main{
+        margin-top: 25%;
+    }
+
+    header>div{
+        margin-top: 5%;
+        margin-left: 55%;
+    }
+    
+    .resumo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        margin-right: 18%;
+    }
+
+    .resumo>div{
+        width: 110px;
+    }
+
+    .newItem{
+        margin-right: 20%;
+    }
+
+    .divDesc, .divType, .divAmount{
+        width: 30%;
+        height: 10%;
+    }
+
+    .newItem>button{
+     margin-top: 8%;
+     width: 30%;
+     font-size: 1.1rem;
+    }
+
+    .divTable{
+       margin-right: 20%;
+    }
+
+
+}

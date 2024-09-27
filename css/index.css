@@ -34,7 +34,6 @@ main{
     gap: 40px;
     width: 100%;
     justify-content: center;
-    flex-wrap: wrap;
 }
 
 .resumo>div{
@@ -98,7 +97,7 @@ i{
 }
 
 .bi-arrow-up-short{
-    color: #00c9a7;
+    color: #121312;
 }
 
 .bi-arrow-down-short{
